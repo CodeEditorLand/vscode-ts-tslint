@@ -1,28 +1,32 @@
 {
   "name": "ts-tslint",
   "displayName": "TSLint (vnext)",
-  "description": "PREVIEW: TSLint as a TypeScript Server Plugin",
   "version": "0.0.1",
-  "publisher": "eg2",
-  "engines": {
-    "vscode": "1.20.0"
-  },
-  "icon": "TSLint_icon.png",
-  "galleryBanner": {
-    "color": "#5c2d91",
-    "theme": "dark"
+  "private": "false",
+  "description": "PREVIEW: TSLint as a TypeScript Server Plugin",
+  "categories": [
+    "Programming Languages",
+    "Linters"
+  ],
+  "homepage": "https://github.com/CodeEditorLand/CodeEditorLand#readme",
+  "bugs": {
+    "url": "https://github.com/CodeEditorLand/CodeEditorLand/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CodeEditorLand/CodeEditorLand.git"
   },
-  "bugs": {
-    "url": "https://github.com/CodeEditorLand/CodeEditorLand/issues"
+  "license": "MIT",
+  "author": {
+    "name": "Nikola Hristov",
+    "email": "nikola@nikolahristov.tech",
+    "url": "https://nikolahristov.tech"
   },
-  "categories": [
-    "Programming Languages",
-    "Linters"
-  ],
+  "publisher": "playform",
+  "type": "module",
+  "scripts": {
+    "prepublishOnly": "TypeScriptESBuild Source/**/*.ts"
+  },
   "contributes": {
     "typescriptServerPlugins": [
       {
@@ -31,26 +35,22 @@
     ]
   },
   "dependencies": {
-    "tslint-language-service": "0.9.9",
     "tslint": "5.20.1",
+    "tslint-language-service": "0.9.9",
     "typescript": "5.2.2"
-  },
-  "homepage": "https://github.com/CodeEditorLand/CodeEditorLand#readme",
-  "license": "MIT",
-  "type": "module",
-  "private": "false",
-  "publishConfig": {
-    "access": "public"
-  },
-  "author": {
-    "name": "Nikola Hristov",
-    "email": "nikola@nikolahristov.tech",
-    "url": "https://nikolahristov.tech"
-  },
-  "scripts": {
-    "prepublishOnly": "TypeScriptESBuild Source/**/*.ts"
   },
   "devDependencies": {
     "typescript-esbuild": "0.3.1"
+  },
+  "engines": {
+    "vscode": "1.20.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "icon": "TSLint_icon.png",
+  "galleryBanner": {
+    "color": "#5c2d91",
+    "theme": "dark"
   }
 }
