@@ -1,2 +1,2 @@
-let test1: string
-console.log(`use ${test1}`)
+let test1: string;
+console.log(`use ${test1}`);
