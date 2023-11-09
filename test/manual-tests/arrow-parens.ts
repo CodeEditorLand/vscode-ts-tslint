@@ -1,1 +1,1 @@
-[1, 2].map((num) => console.log(num));
+[1, 2 ].map( num => console.log(num) );

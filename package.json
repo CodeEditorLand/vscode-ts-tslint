@@ -1,56 +1,38 @@
 {
-	"name": "ts-tslint",
-	"displayName": "TSLint (vnext)",
-	"version": "0.0.1",
-	"private": "false",
-	"description": "PREVIEW: TSLint as a TypeScript Server Plugin",
-	"categories": [
-		"Programming Languages",
-		"Linters"
-	],
-	"homepage": "https://github.com/CodeEditorLand/CodeEditorLand#readme",
-	"bugs": {
-		"url": "https://github.com/CodeEditorLand/CodeEditorLand/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/CodeEditorLand/CodeEditorLand.git"
-	},
-	"license": "MIT",
-	"author": {
-		"name": "Nikola Hristov",
-		"email": "nikola@nikolahristov.tech",
-		"url": "https://nikolahristov.tech"
-	},
-	"publisher": "playform",
-	"type": "module",
-	"scripts": {
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
-	},
-	"contributes": {
-		"typescriptServerPlugins": [
-			{
-				"name": "tslint-language-service"
-			}
-		]
-	},
-	"dependencies": {
-		"tslint": "5.20.1",
-		"tslint-language-service": "0.9.9",
-		"typescript": "5.2.2"
-	},
-	"devDependencies": {
-		"typescript-esbuild": "0.3.1"
-	},
-	"engines": {
-		"vscode": "1.20.0"
-	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"icon": "TSLint_icon.png",
-	"galleryBanner": {
-		"color": "#5c2d91",
-		"theme": "dark"
-	}
+    "name": "ts-tslint",
+    "displayName": "TSLint (vnext)",
+    "description": "PREVIEW: TSLint as a TypeScript Server Plugin",
+    "version": "0.0.7",
+    "publisher": "eg2",
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "icon": "TSLint_icon.png",
+    "galleryBanner": {
+        "color": "#5c2d91",
+        "theme": "dark"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Microsoft/vscode-ts-tslint.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Microsoft/vscode-ts-tslint/issues"
+    },
+    "categories": [
+        "Programming Languages",
+        "Linters"
+    ],
+    "contributes": {
+        "typescriptServerPlugins": [
+            {
+                "name": "tslint-language-service"
+            }
+        ]
+    },
+    "dependencies": {
+        "tslint-language-service": "^0.9.9",
+        "tslint": "^5.10.0",
+        "typescript": "^2.8.3"
+    }
 }
