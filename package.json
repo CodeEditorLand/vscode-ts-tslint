@@ -1,16 +1,7 @@
 {
-  "name": "ts-tslint",
-  "displayName": "TSLint (vnext)",
-  "version": "0.0.7",
-  "description": "PREVIEW: TSLint as a TypeScript Server Plugin",
   "bugs": {
     "url": "https://github.com/Microsoft/vscode-ts-tslint/issues"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Microsoft/vscode-ts-tslint.git"
-  },
-  "publisher": "eg2",
   "contributes": {
     "typescriptServerPlugins": [
       {
@@ -19,12 +10,21 @@
     ]
   },
   "dependencies": {
-    "tslint-language-service": "^0.9.9",
-    "typescript": "^2.8.3"
+    "tslint-language-service": "0.9.9",
+    "typescript": "2.8.3"
   },
-  "icon": "TSLint_icon.png",
+  "description": "PREVIEW: TSLint as a TypeScript Server Plugin",
+  "displayName": "TSLint (vnext)",
   "galleryBanner": {
     "color": "#5c2d91",
     "theme": "dark"
-  }
+  },
+  "icon": "TSLint_icon.png",
+  "name": "ts-tslint",
+  "publisher": "eg2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/vscode-ts-tslint.git"
+  },
+  "version": "0.0.7"
 }
