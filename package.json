@@ -1,38 +1,47 @@
 {
-    "name": "ts-tslint",
-    "displayName": "TSLint (vnext)",
-    "description": "PREVIEW: TSLint as a TypeScript Server Plugin",
-    "version": "0.0.7",
-    "publisher": "eg2",
-    "engines": {
-        "vscode": "1.20.0"
-    },
-    "icon": "TSLint_icon.png",
-    "galleryBanner": {
-        "color": "#5c2d91",
-        "theme": "dark"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Microsoft/vscode-ts-tslint.git"
-    },
-    "bugs": {
-        "url": "https://github.com/Microsoft/vscode-ts-tslint/issues"
-    },
-    "categories": [
-        "Programming Languages",
-        "Linters"
-    ],
-    "contributes": {
-        "typescriptServerPlugins": [
-            {
-                "name": "tslint-language-service"
-            }
-        ]
-    },
-    "dependencies": {
-        "tslint-language-service": "0.9.9",
-        "tslint": "5.20.1",
-        "typescript": "5.4.2"
-    }
+	"name": "ts-tslint",
+	"displayName": "TSLint (vnext)",
+	"version": "0.0.1",
+	"private": false,
+	"description": "PREVIEW: TSLint as a TypeScript Server Plugin",
+	"homepage": "https://github.com/CodeEditorLand/Foundation#readme",
+	"bugs": {
+		"url": "https://github.com/CodeEditorLand/Foundation/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CodeEditorLand/Foundation.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Playform",
+		"email": "Hello@Playform.Cloud",
+		"url": "https://playform.cloud"
+	},
+	"type": "module",
+	"scripts": {
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts'"
+	},
+	"contributes": {
+		"typescriptServerPlugins": [
+			{
+				"name": "tslint-language-service"
+			}
+		]
+	},
+	"dependencies": {
+		"tslint-language-service": "0.9.9",
+		"typescript": "5.4.2"
+	},
+	"devDependencies": {
+		"typescript-esbuild": "latest"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"icon": "TSLint_icon.png",
+	"galleryBanner": {
+		"color": "#5c2d91",
+		"theme": "dark"
+	}
 }
