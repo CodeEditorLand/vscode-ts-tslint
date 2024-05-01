@@ -34,7 +34,7 @@
 		]
 	},
 	"dependencies": {
-		"tslint-language-service": "^0.9.9"
+		"tslint-language-service": "0.9.9"
 	},
 	"devDependencies": {
 		"@playform/build": "0.0.7",
