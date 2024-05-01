@@ -1,30 +1,11 @@
 {
-	"name": "ts-tslint",
-	"displayName": "TSLint (vnext)",
-	"version": "0.0.1",
-	"private": false,
-	"description": "PREVIEW: TSLint as a TypeScript Server Plugin",
-	"keywords": [
-		"land"
-	],
-	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandTSTSLint#readme",
-	"bugs": {
-		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandTSTSLint/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+HTTPS://github.com/CodeEditorLand/LandTSTSLint.git"
-	},
-	"license": "SEE LICENSE IN LICENSE",
 	"author": {
-		"name": "🌆 — Land —",
 		"email": "Land@PlayForm.Cloud",
+		"name": "🌆 — Land —",
 		"url": "HTTPS://Land.PlayForm.Cloud"
 	},
-	"type": "module",
-	"scripts": {
-		"Document": "Document 'Source/**/*.ts'",
-		"prepublishOnly": "Build 'Source/**/*.ts'"
+	"bugs": {
+		"url": "HTTPS://GitHub.Com/CodeEditorLand/LandTSTSLint/issues"
 	},
 	"contributes": {
 		"typescriptServerPlugins": [
@@ -36,16 +17,35 @@
 	"dependencies": {
 		"tslint-language-service": "0.9.9"
 	},
+	"description": "PREVIEW: TSLint as a TypeScript Server Plugin",
 	"devDependencies": {
 		"@playform/build": "0.0.7",
 		"@playform/document": "0.0.6"
 	},
-	"publishConfig": {
-		"access": "public"
-	},
-	"icon": "TSLint_icon.png",
+	"displayName": "TSLint (vnext)",
 	"galleryBanner": {
 		"color": "#5c2d91",
 		"theme": "dark"
-	}
+	},
+	"homepage": "HTTPS://GitHub.Com/CodeEditorLand/LandTSTSLint#readme",
+	"icon": "TSLint_icon.png",
+	"keywords": [
+		"land"
+	],
+	"license": "SEE LICENSE IN LICENSE",
+	"name": "ts-tslint",
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+HTTPS://github.com/CodeEditorLand/LandTSTSLint.git"
+	},
+	"scripts": {
+		"Document": "Document 'Source/**/*.ts'",
+		"prepublishOnly": "Build 'Source/**/*.ts'"
+	},
+	"type": "module",
+	"version": "0.0.1"
 }
