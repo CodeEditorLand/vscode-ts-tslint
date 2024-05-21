@@ -10,7 +10,7 @@
 		]
 	},
 	"dependencies": {
-		"tslint-language-service": "^0.9.9"
+		"tslint-language-service": "0.9.9"
 	},
 	"icon": "TSLint_icon.png",
 	"galleryBanner": {
