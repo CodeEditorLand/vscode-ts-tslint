@@ -1,0 +1,66 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"/><meta name="keywords" content="@playform/document"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>ts-tslint</title><meta name="description" content="Documentation for ts-tslint"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><link rel="stylesheet" href="assets/custom.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">ts-tslint</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>ts-tslint</h2></div><div class="tsd-panel tsd-typography"><p><strong>❗DEPRECATED❗</strong></p>
+<p>This extension has been deprecated in favor of the
+<a href="https://github.com/microsoft/vscode-typescript-tslint-plugin">vscode-typescript-tslint-plugin</a>
+extension.</p>
+<p>This repository has been superseded by
+<a href="https://github.com/microsoft/typescript-tslint-plugin">typescript-tslint-plugin</a>
+and
+<a href="https://github.com/microsoft/vscode-typescript-tslint-plugin">vscode-typescript-tslint-plugin</a></p>
+<hr>
+<a id="md:vscode-tslintvnext-preview" class="tsd-anchor"></a><h1 class="tsd-anchor-link">vscode-tslint(vnext) PREVIEW<a href="#md:vscode-tslintvnext-preview" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>This is a preview of a work in progress reimplementation of the
+<a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">vscode-tslint</a>
+extension. It is published to enable early feedback and testing. The
+implementation uses the new TypeScript language server plugin support introduced
+in TypeScript version
+<a href="https://marketplace.visualstudio.com/items?itemName=eg2.tslint">2.3</a>. It runs
+<code>tslint</code> as a plugin for the TypeScript language server.</p>
+<p>The extension can be installed side-by-side with the current <code>vscode-tslint</code>
+extension, use the Extensions Viewlet to disable the version of the extension
+you do not want to use.</p>
+<a id="md:limitations" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Limitations<a href="#md:limitations" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>This is a preview and many of the features provided by the vscode-tslint
+extension are not yet provided. See this issue for the list of known gaps
+between <code>vscode-tslint</code>see this
+<a href="https://github.com/angelozerr/tslint-language-service/issues/32">issue</a>.</p>
+<p>Due to an issue in the tslint implementation of the <code>no-unused-variable rule</code>
+(<a href="https://github.com/palantir/tslint/issues/2649">#2649</a>), this rule has to be
+disabled by the plugin. You can use the typescript compiler options
+<code>noUnusedLocals</code> and <code>noUnusedParameters</code> instead.</p>
+<a id="md:differences-between-vscode-tslint-vnext-and-vscode-tslint" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Differences between vscode-tslint (vnext) and vscode-tslint<a href="#md:differences-between-vscode-tslint-vnext-and-vscode-tslint" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><ul>
+<li>configuration options for tslint are now done inside the <code>tsconfig.json</code> in
+<code>plugins</code> section (see below).</li>
+<li>the implementation as a TypeScript server plugin enables to shares the
+program representation with TypeScript. This is more efficient than the
+current vscode-tslint implementation. The current implementation needs to
+reanalyze a document that has already been analyzed by the TypeScript
+language server.</li>
+<li>vscode-tslint can only lint one file a time. It therefore cannot support
+<a href="https://palantir.github.io/tslint/usage/type-checking/">semantic tslint rules</a>
+that require the type checker. The language service plugin doesn't have this
+limitation. To overcome this limitation is a key motivation for
+reimplementing the extension.</li>
+<li>the extension bundles a tslint and typescript version.</li>
+</ul>
+<a id="md:configuring-the-tslint-server-plugin" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Configuring the tslint-server-plugin<a href="#md:configuring-the-tslint-server-plugin" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>You can define settings for the <code>tslint-language-service</code> plugin in the
+<code>tsconfig.json</code> file. The available settings are documented
+<a href="https://github.com/angelozerr/tslint-language-service#configuration-options">here</a>:</p>
+<pre><code class="json"><span class="hl-0">{</span><br/><span class="hl-0">	</span><span class="hl-1">&quot;compilerOptions&quot;</span><span class="hl-0">: {</span><br/><span class="hl-0">		</span><span class="hl-1">&quot;plugins&quot;</span><span class="hl-0">: [</span><br/><span class="hl-0">			{</span><br/><span class="hl-0">				</span><span class="hl-1">&quot;name&quot;</span><span class="hl-0">: </span><span class="hl-2">&quot;tslint-language-service&quot;</span><span class="hl-0">,</span><br/><span class="hl-0">				</span><span class="hl-1">&quot;alwaysShowRuleFailuresAsWarnings&quot;</span><span class="hl-0">: </span><span class="hl-3">false</span><span class="hl-0">,</span><br/><span class="hl-0">				</span><span class="hl-1">&quot;ignoreDefinitionFiles&quot;</span><span class="hl-0">: </span><span class="hl-3">true</span><br/><span class="hl-0">				</span><span class="hl-4">//&quot;configFile&quot;: &quot;../tslint.json&quot;,</span><br/><span class="hl-0">				</span><span class="hl-4">//&quot;disableNoUnusedVariableRule&quot;: false</span><br/><span class="hl-0">			}</span><br/><span class="hl-0">		]</span><br/><span class="hl-0">	}</span><br/><span class="hl-0">}</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:using-a-different-version-of-tslint-than-the-version-that-is-bundled-with-the-extension" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Using a different version of tslint than the version that is bundled with the extension<a href="#md:using-a-different-version-of-tslint-than-the-version-that-is-bundled-with-the-extension" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>The extension comes with a particular version of tslint. If you want to use a
+different version then you have to use <code>npm</code> install the
+<code>tslint-language-service</code> module and <code>tslint</code> as a peer to the TypeScript
+version you want to use. The modules folder should have the following layout:</p>
+<ul>
+<li>node_modules
+<ul>
+<li>typescript</li>
+<li>tslint</li>
+<li>tslint-language-service</li>
+</ul>
+</li>
+</ul>
+<p>If you are extending the TypeScript version that is installed into your
+workspace then make sure to use this version and not the one that comes with VS
+Code. Otherwise you will have configured the setting <code>typescript.tsdk</code> already
+and things should just work.</p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:vscode-tslintvnext-preview"><span>vscode-<wbr/>tslint(vnext) PREVIEW</span></a><a href="#md:limitations"><span>Limitations</span></a><a href="#md:differences-between-vscode-tslint-vnext-and-vscode-tslint"><span>Differences between vscode-<wbr/>tslint (vnext) and vscode-<wbr/>tslint</span></a><a href="#md:configuring-the-tslint-server-plugin"><span>Configuring the tslint-<wbr/>server-<wbr/>plugin</span></a><a href="#md:using-a-different-version-of-tslint-than-the-version-that-is-bundled-with-the-extension"><span>Using a different version of tslint than the version that is bundled with the extension</span></a></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>ts-tslint</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>
