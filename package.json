@@ -7,7 +7,7 @@
 		]
 	},
 	"dependencies": {
-		"tslint-language-service": "^0.9.9"
+		"tslint-language-service": "0.9.9"
 	},
 	"description": "PREVIEW: TSLint as a TypeScript Server Plugin",
 	"displayName": "TSLint (vnext)",
