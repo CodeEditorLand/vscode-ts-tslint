@@ -1,4 +1,7 @@
 {
+	"name": "ts-tslint",
+	"displayName": "TSLint (vnext)",
+	"description": "PREVIEW: TSLint as a TypeScript Server Plugin",
 	"contributes": {
 		"typescriptServerPlugins": [
 			{
@@ -9,12 +12,9 @@
 	"dependencies": {
 		"tslint-language-service": "0.9.9"
 	},
-	"description": "PREVIEW: TSLint as a TypeScript Server Plugin",
-	"displayName": "TSLint (vnext)",
+	"icon": "TSLint_icon.png",
 	"galleryBanner": {
 		"color": "#5c2d91",
 		"theme": "dark"
-	},
-	"icon": "TSLint_icon.png",
-	"name": "ts-tslint"
+	}
 }
